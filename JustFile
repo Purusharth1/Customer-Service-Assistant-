@@ -5,7 +5,6 @@ default:
   just --list
 
 setup:
-    cd Customer-Service-Assistant-/
     uv sync
 
 run-backend:
