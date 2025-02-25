@@ -86,7 +86,10 @@ Clone the repository and install the dependencies:
 
 ```bash
 git clone https://github.com/Purusharth1/Customer-Service-Assistant-.git
-just setup
+```
+Before running following command Please ensure just is already installed in your system 
+```bash
+just setup  
 ```
 
 ### **2. Running the Application**
@@ -100,6 +103,7 @@ This starts both the backend and frontend simultaneously.
 #### Run TUI 
  
 To start the application in BUI mode, execute the following command:
+(For this you should have an audio file in your local folder repository)
 ```bash
 just run-tui
 ```

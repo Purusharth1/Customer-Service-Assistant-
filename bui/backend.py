@@ -301,9 +301,12 @@ def _generate_summary_table(
         "rows": [],
     }
 
-    # Extract speaker-specific data
-    speaker_1_data = speaker_speech_data.speaker_speech_data.get("SPEAKER_00", None)
-    speaker_2_data = speaker_speech_data.speaker_speech_data.get("SPEAKER_01", None)
+    # Extract speaker-specific data (if available)
+    speaker_1_data = None
+    speaker_2_data = None
+    if speaker_speech_data and hasattr(speaker_speech_data, "speaker_speech_data"):
+        speaker_1_data = speaker_speech_data.speaker_speech_data.get("SPEAKER_00", None)
+        speaker_2_data = speaker_speech_data.speaker_speech_data.get("SPEAKER_01", None)
 
     # Add rows to the summary table
     summary_table["rows"].append([
@@ -314,46 +317,81 @@ def _generate_summary_table(
         f"Time: {speaker_2_data.time_period if speaker_2_data else 'N/A'}",
     ])
 
-    summary_table["rows"].append([
-        "Speaking Speed (WPM)",
-        f"{speed_results.speaking_speeds.get('SPEAKER_00', 'N/A')}",
-        f"{speed_results.speaking_speeds.get('SPEAKER_01', 'N/A')}",
-    ])
+    # Speaking Speed (if available)
+    if speed_results:
+        summary_table["rows"].append([
+            "Speaking Speed (WPM)",
+            f"{speed_results.speaking_speeds.get('SPEAKER_00', 'N/A')}",
+            f"{speed_results.speaking_speeds.get('SPEAKER_01', 'N/A')}",
+        ])
+    else:
+        summary_table["rows"].append([
+            "Speaking Speed (WPM)",
+            "N/A",
+            "N/A",
+        ])
 
-    summary_table["rows"].append([
-        "PII Check",
-        f"Detected: {pii_results.detected if pii_results else 'N/A'}",
-        f"Detected: {pii_results.detected if pii_results else 'N/A'}",
-    ])
+    # PII Check (if available)
+    if pii_results:
+        summary_table["rows"].append([
+            "PII Check",
+            f"Detected: {pii_results.detected}",
+            f"Detected: {pii_results.detected}",
+        ])
+    else:
+        summary_table["rows"].append([
+            "PII Check",
+            "N/A",
+            "N/A",
+        ])
 
-    summary_table["rows"].append([
-        "Profanity Check",
-        f"Detected: {profanity_results.detected if profanity_results else 'N/A'}",
-        f"Detected: {profanity_results.detected if profanity_results else 'N/A'}",
-    ])
+    # Profanity Check (if available)
+    if profanity_results:
+        summary_table["rows"].append([
+            "Profanity Check",
+            f"Detected: {profanity_results.detected}",
+            f"Detected: {profanity_results.detected}",
+        ])
+    else:
+        summary_table["rows"].append([
+            "Profanity Check",
+            "N/A",
+            "N/A",
+        ])
 
-    summary_table["rows"].append([
-        "Required Phrases",
-        f"Present: {phrases_results.required_phrases_present}\n"
-        f"Phrases: {phrases_results.present_phrases if phrases_results else 'N/A'}",
-        f"Present: {phrases_results.required_phrases_present}\n"
-        f"Phrases: {phrases_results.present_phrases if phrases_results else 'N/A'}",
-    ])
+    # Required Phrases (if available)
+    if phrases_results:
+        summary_table["rows"].append([
+            "Required Phrases",
+            f"Present: {phrases_results.required_phrases_present}\n"
+            f"Phrases: {phrases_results.present_phrases}",
+            f"Present: {phrases_results.required_phrases_present}\n"
+            f"Phrases: {phrases_results.present_phrases}",
+        ])
+    else:
+        summary_table["rows"].append([
+            "Required Phrases",
+            "N/A",
+            "N/A",
+        ])
 
-    summary_table["rows"].append([
-        "Sentiment Analysis",
-        f"Polarity: {sentiment_results.polarity if sentiment_results else 'N/A'}\n"
-        f"Subjectivity: {sentiment_results.subjectivity\
-                    if sentiment_results else 'N/A'}\n"
-        f"Overall: {sentiment_results.overall_sentiment\
-                    if sentiment_results else 'N/A'}",
-        f"Polarity: {sentiment_results.polarity\
-                    if sentiment_results else 'N/A'}\n"
-        f"Subjectivity: {sentiment_results.subjectivity\
-                    if sentiment_results else 'N/A'}\n"
-        f"Overall:{sentiment_results.overall_sentiment\
-                if sentiment_results else 'N/A'}",
-    ])
+    # Sentiment Analysis (if available)
+    if sentiment_results:
+        summary_table["rows"].append([
+            "Sentiment Analysis",
+            f"Polarity: {sentiment_results.polarity}\n"
+            f"Subjectivity: {sentiment_results.subjectivity}\n"
+            f"Overall: {sentiment_results.overall_sentiment}",
+            f"Polarity: {sentiment_results.polarity}\n"
+            f"Subjectivity: {sentiment_results.subjectivity}\n"
+            f"Overall: {sentiment_results.overall_sentiment}",
+        ])
+    else:
+        summary_table["rows"].append([
+            "Sentiment Analysis",
+            "N/A",
+            "N/A",
+        ])
 
     return summary_table
 
