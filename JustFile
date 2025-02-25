@@ -5,7 +5,7 @@ default:
   just --list
 
 setup:
-    sudo apt install just
+    cd Customer-Service-Assistant-/
     uv sync
 
 run-backend:
@@ -28,26 +28,9 @@ run-tui:
     uv run tui/tui.py
 
 run-mkdocs:
+    @-pkill -f backend.py
     @-pkill -f mkdocs.yml
     uv run mkdocs serve --config-file project-docs/mkdocs.yml
 
 run-ruff:
     uv run ruff check
-
-
-
-# dont know code below this line
-
-# curl-backend:
-#     curl -X 'POST' \
-#       'http://0.0.0.0:8000/recognize' \
-#       -H 'accept: application/json' \
-#       -H 'Content-Type: application/json' \
-#       -d '{ "audio": "base64_encoded_audio_data" }'
-#     echo ""
-
-# http-backend:
-#     uv tool run --from httpie http POST http://0.0.0.0:8000/recognize audio="base64_encoded_audio_data"
-
-# wget-backend:
-#     wget --quiet --post-data '{"audio": "base64_encoded_audio_data"}' --header='Content-Type: application/json' --content-on-error -O - http://localhost:8000/recognize

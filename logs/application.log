@@ -1,0 +1,93 @@
+2025-02-25 06:51:34 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 06:51:34 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 06:51:34 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 06:51:54 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 06:51:54 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
+2025-02-25 06:51:55 | INFO | speaker_diarization:diarize:56 - Starting speaker diarization for file: {audio_file}
+2025-02-25 06:52:02 | INFO | speaker_diarization:diarize:67 - Pipeline loaded and moved to {device}
+2025-02-25 06:53:55 | INFO | speaker_diarization:diarize:79 - Identified {len(speaker_segments)} speaker segments
+2025-02-25 06:53:55 | WARNING | speaker_diarization:diarize:109 - Speaking ratio: {speaking_ratio}
+2025-02-25 06:53:55 | INFO | speaker_diarization:diarize:110 - Interruptions count: {interruptions}
+2025-02-25 06:53:55 | INFO | speaker_diarization:diarize:111 - Time to first token: {first_speaker_time or 0.0}
+2025-02-25 06:53:56 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 06:53:56 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 06:53:56 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 06:54:17 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 06:54:17 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
+2025-02-25 06:56:52 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 06:56:53 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 06:56:53 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 06:57:12 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 06:57:12 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
+2025-02-25 06:57:13 | INFO | pii_check:check_pii:44 - Starting PII detection.
+2025-02-25 06:57:13 | WARNING | pii_check:check_pii:50 - Detected possible {key} in text, masking it.
+2025-02-25 06:57:13 | WARNING | pii_check:check_pii:55 - Sensitive word detected: {word}
+2025-02-25 06:57:13 | INFO | pii_check:check_pii:58 - PII detected and masked.
+2025-02-25 06:57:14 | INFO | profanity_check:check_profanity:47 - Starting profanity check.
+2025-02-25 06:57:14 | INFO | profanity_check:check_profanity:55 - No profanity detected in the text.
+2025-02-25 06:57:15 | INFO | required_phrases_check:check_required_phrases:46 - Starting required phrases check.
+2025-02-25 06:57:15 | INFO | required_phrases_check:check_required_phrases:55 - Required phrases found: {present_phrases}
+2025-02-25 06:57:16 | INFO | sentiment_analysis:analyse_sentiment:44 - Starting sentiment analysis.
+2025-02-25 06:57:16 | INFO | sentiment_analysis:analyse_sentiment:57 - Sentiment Analysis Results - Polarity: {polarity:.2f},         Subjectivity: {subjectivity:.2f}, Overall Sentiment: {overall_sentiment}
+2025-02-25 06:57:17 | INFO | categorize_call:categorize:38 - Starting call categorization.
+2025-02-25 06:57:17 | INFO | categorize_call:categorize:49 - Detected category counts: {detected_categories}
+2025-02-25 06:57:17 | WARNING | categorize_call:categorize:60 - No matching category found. Categorizing as 'Unknown'.
+2025-02-25 07:05:57 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 07:05:57 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 07:05:57 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 07:06:16 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 07:06:16 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
+2025-02-25 07:06:17 | INFO | pii_check:check_pii:44 - Starting PII detection.
+2025-02-25 07:06:17 | WARNING | pii_check:check_pii:50 - Detected possible {key} in text, masking it.
+2025-02-25 07:06:17 | WARNING | pii_check:check_pii:55 - Sensitive word detected: {word}
+2025-02-25 07:06:17 | INFO | pii_check:check_pii:58 - PII detected and masked.
+2025-02-25 07:06:18 | INFO | profanity_check:check_profanity:47 - Starting profanity check.
+2025-02-25 07:06:18 | INFO | profanity_check:check_profanity:55 - No profanity detected in the text.
+2025-02-25 07:06:19 | INFO | required_phrases_check:check_required_phrases:46 - Starting required phrases check.
+2025-02-25 07:06:19 | INFO | required_phrases_check:check_required_phrases:55 - Required phrases found: {present_phrases}
+2025-02-25 07:06:20 | INFO | sentiment_analysis:analyse_sentiment:44 - Starting sentiment analysis.
+2025-02-25 07:06:20 | INFO | sentiment_analysis:analyse_sentiment:57 - Sentiment Analysis Results - Polarity: {polarity:.2f},         Subjectivity: {subjectivity:.2f}, Overall Sentiment: {overall_sentiment}
+2025-02-25 07:06:21 | INFO | categorize_call:categorize:38 - Starting call categorization.
+2025-02-25 07:06:21 | INFO | categorize_call:categorize:49 - Detected category counts: {detected_categories}
+2025-02-25 07:06:21 | WARNING | categorize_call:categorize:60 - No matching category found. Categorizing as 'Unknown'.
+2025-02-25 07:09:41 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 07:09:42 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 07:09:42 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 07:10:01 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 07:10:01 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
+2025-02-25 07:10:02 | INFO | pii_check:check_pii:44 - Starting PII detection.
+2025-02-25 07:10:02 | WARNING | pii_check:check_pii:50 - Detected possible {key} in text, masking it.
+2025-02-25 07:10:02 | WARNING | pii_check:check_pii:55 - Sensitive word detected: {word}
+2025-02-25 07:10:02 | INFO | pii_check:check_pii:58 - PII detected and masked.
+2025-02-25 07:10:03 | INFO | profanity_check:check_profanity:47 - Starting profanity check.
+2025-02-25 07:10:04 | INFO | profanity_check:check_profanity:55 - No profanity detected in the text.
+2025-02-25 07:10:05 | INFO | required_phrases_check:check_required_phrases:46 - Starting required phrases check.
+2025-02-25 07:10:05 | INFO | required_phrases_check:check_required_phrases:55 - Required phrases found: {present_phrases}
+2025-02-25 07:10:06 | INFO | sentiment_analysis:analyse_sentiment:44 - Starting sentiment analysis.
+2025-02-25 07:10:06 | INFO | sentiment_analysis:analyse_sentiment:57 - Sentiment Analysis Results - Polarity: {polarity:.2f},         Subjectivity: {subjectivity:.2f}, Overall Sentiment: {overall_sentiment}
+2025-02-25 07:10:07 | INFO | categorize_call:categorize:38 - Starting call categorization.
+2025-02-25 07:10:07 | INFO | categorize_call:categorize:49 - Detected category counts: {detected_categories}
+2025-02-25 07:10:07 | WARNING | categorize_call:categorize:60 - No matching category found. Categorizing as 'Unknown'.
+2025-02-25 07:18:17 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 07:18:18 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 07:18:18 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 07:18:37 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 07:18:37 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
+2025-02-25 07:18:38 | INFO | pii_check:check_pii:44 - Starting PII detection.
+2025-02-25 07:18:38 | WARNING | pii_check:check_pii:50 - Detected possible {key} in text, masking it.
+2025-02-25 07:18:38 | WARNING | pii_check:check_pii:55 - Sensitive word detected: {word}
+2025-02-25 07:18:38 | INFO | pii_check:check_pii:58 - PII detected and masked.
+2025-02-25 07:18:39 | INFO | profanity_check:check_profanity:47 - Starting profanity check.
+2025-02-25 07:18:39 | INFO | profanity_check:check_profanity:55 - No profanity detected in the text.
+2025-02-25 07:18:40 | INFO | required_phrases_check:check_required_phrases:46 - Starting required phrases check.
+2025-02-25 07:18:40 | INFO | required_phrases_check:check_required_phrases:55 - Required phrases found: {present_phrases}
+2025-02-25 07:18:41 | INFO | sentiment_analysis:analyse_sentiment:44 - Starting sentiment analysis.
+2025-02-25 07:18:41 | INFO | sentiment_analysis:analyse_sentiment:57 - Sentiment Analysis Results - Polarity: {polarity:.2f},         Subjectivity: {subjectivity:.2f}, Overall Sentiment: {overall_sentiment}
+2025-02-25 07:18:42 | INFO | categorize_call:categorize:38 - Starting call categorization.
+2025-02-25 07:18:42 | INFO | categorize_call:categorize:49 - Detected category counts: {detected_categories}
+2025-02-25 07:18:42 | WARNING | categorize_call:categorize:60 - No matching category found. Categorizing as 'Unknown'.
+2025-02-25 07:21:59 | INFO | transcription:transcribe_audio_segment:41 - Starting transcription for file: {data.audio_file}
+2025-02-25 07:22:00 | INFO | transcription:transcribe_audio_segment:52 - Using full audio file for transcription.
+2025-02-25 07:22:00 | INFO | transcription:transcribe_audio_segment:57 - Temporary WAV file created: {temp_wav_path}
+2025-02-25 07:22:16 | INFO | transcription:transcribe_audio_segment:64 - Temporary file deleted: {temp_wav_path}
+2025-02-25 07:22:16 | INFO | transcription:transcribe_audio_segment:68 - Transcription successful: {transcription[:50]}...
