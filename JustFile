@@ -5,6 +5,7 @@ default:
   just --list
 
 setup:
+    sudo apt install just
     uv sync
 
 run-backend:
