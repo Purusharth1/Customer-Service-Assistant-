@@ -66,4 +66,3 @@ To check the code for linting issues using Ruff:
 just run-ruff
 ```
 This will analyze the codebase and report any linting errors or warnings.
-```
