@@ -1,0 +1,52 @@
+set shell := ["bash", "-cu"]
+set dotenv-load
+
+default:
+  just --list
+
+setup:
+    uv sync
+
+run-backend:
+    @-pkill -f backend.py
+    uv run fastapi run "bui/backend.py"
+
+run-frontend:
+    @-pkill -f front.py
+    uv run streamlit run "bui/front.py"
+
+run-bui:
+    @-pkill -f backend.py
+    @-pkill -f front.py
+    uv run fastapi run "bui/backend.py" &
+    uv run streamlit run "bui/front.py" &
+    echo "Backend and frontend are running."
+
+run-tui:
+    @-pkill -f tui.py
+    uv run tui/tui.py
+
+run-mkdocs:
+    @-pkill -f mkdocs.yml
+    uv run mkdocs serve --config-file project-docs/mkdocs.yml
+
+run-ruff:
+    uv run ruff check
+
+
+
+# dont know code below this line
+
+# curl-backend:
+#     curl -X 'POST' \
+#       'http://0.0.0.0:8000/recognize' \
+#       -H 'accept: application/json' \
+#       -H 'Content-Type: application/json' \
+#       -d '{ "audio": "base64_encoded_audio_data" }'
+#     echo ""
+
+# http-backend:
+#     uv tool run --from httpie http POST http://0.0.0.0:8000/recognize audio="base64_encoded_audio_data"
+
+# wget-backend:
+#     wget --quiet --post-data '{"audio": "base64_encoded_audio_data"}' --header='Content-Type: application/json' --content-on-error -O - http://localhost:8000/recognize
